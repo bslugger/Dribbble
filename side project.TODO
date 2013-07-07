@@ -1,0 +1,31 @@
+Rules:
+No printing paper out to measure dimensions
+No asking people for help
+No Rushing...
+
+Prize if completed:
+Lunch Friday!
+
+
+ Day 1:
+ ☐ code up design
+
+ Day 2:
+ ☐ pull "most popular" feed from dribble
+   -http://dribbble.com/api#get_shots_list
+
+ Day 3:
+ ☐ dynamically populate first page of results on grid
+ ☐ create a handlebar template
+
+ Day 4:
+ ☐ create a get get link at the bottom of the page to dynamically pull the second page
+
+ Day 5:
+ ☐ create favorites section that will hold the list of favorites in local storage
+
+ Day 6:
+ ☐ on double click of any dribble entry should be added to the favorites section
+ ☐ on right click of any entry, should spawn modal with remaining dribble entry information
+ ☐ make template for modal
+

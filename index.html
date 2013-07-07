@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title> Dribbble API </title>
+	<meta name="Edgar" content="AJAX calls">
+	<link rel="stylesheet" href="stylesheets/styles.css">
+
+	<script id='results-template' type='text/x-handlebars-template'>
+	
+		<ul class="results">
+			{{#each shots}}
+				<li class="shot">
+					<div class="info">
+						<img class="import" src="{{image_url}}" data-id='{{id}}' data-height="{{height}}" data-width="{{width}}" data-title="{{title}}"> 
+						<span class="text">{{title}}</span><img class="star" src="images/star.png">
+					</div>
+				</li>
+			{{/each}}	
+		</ul>
+
+	</script>
+
+	<script id='fave-template' type='text/x-handlebars-template'>
+		<li class="favorites-items">
+			<div class="info">
+				<img class="fave" src="{{image_url}}" data-id='{{id}}' data-height="{{height}}" data-width="{{width}}" data-title="{{title}}" data-rating="0" data-categories=""> 
+				<span class="text">{{title}}</span><button class="remove"> X </button>
+				<div class="rating"> 
+					<h3>{{title}}</h3>
+					<div>
+						Rating
+					<!--<span class="ratingStars starRating">1</span>
+						<span class="ratingStars starRating">2</span>
+						<span class="ratingStars starRating">3</span>
+						<span class="ratingStars starRating">4</span>
+						<span class="ratingStars unstarRating">5</span>
+						<span class="ratingStars">{{rating}}</span>
+					-->
+					</div>
+					<form name="category-list" method="POST" class="form-input">
+						Category<input type="text" value="{{tag}}" id="tagger"></input>
+					</form>
+					<div class="tags">
+						{{savedTags}}
+					</div>
+				</div>
+			</div>
+		</li>
+	</script>
+
+	<script id="modal-template"  type='text/x-handlebars-template'>
+		<div class="modal">
+			<h2>{{title}}</h2>
+			<img class="modalImg" src="{{image_url}}">
+			<p class="close">click anywhere on image to close</p>
+
+		</div>		
+	</script>
+
+	<script id="fave-dropdown" type='text/x-handlebars-template'>
+				<option value="{{savedTags}}">{{savedTags}}</option>
+	</script>
+
+	<script id="fave-modal" type='text/x-handlebars-template'>
+
+
+	</script>
+
+</head>
+<body>
+<div class="container">
+<div class="favorites-box">
+	<div class="header">
+		<h1> Favorites </h1>
+	</div> <!-- End header  -->
+	<div class="favorites">
+	<div class="formBox4Faves">
+		<form name="categories" method="POST">
+			<select class="faveTarget">
+				<!-- options list is generated from handlebars script -->
+			</select>
+		</form>
+	</div>	
+		<ul class="favorites-list">
+			<!-- li are imported from handlebars script
+	-->
+		</ul>
+	</div>
+
+	<div class="overlay">
+	<!--imported from handlebars script
+	-->
+	</div>
+	
+</div><!-- End Favorites-box  -->
+
+<div class="results-box">
+	<div class="header">
+		<h1> Results </h1>
+	</div> <!-- End header  -->
+	<div class="formBox">
+		<form name="feedName" method="POST">
+			<select class="target">
+				<option value="popular" class="selected">popular</option>
+				<option value="debuts">debuts</option>
+				<option value="everyone">everyone</option>
+			</select>
+		</form>
+	</div>
+	<div class="API">
+		<!-- imported from handlebars script -->
+	</div>
+	<div class="load">
+		<h2> Load More... </h2>
+		<!-- JS imports new page from API call
+		-->
+	</div>
+</div><!-- End Results-box  -->
+
+</div> <!-- End Container  -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/application.js"></script>
+<script src="js/handlebars.js"></script>
+
+</body>
+</html>
